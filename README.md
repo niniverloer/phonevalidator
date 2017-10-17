@@ -36,62 +36,111 @@ npm install --save phonevalidator
   PhoneValidator.useDefaults({},{flagLink:"./node_modules/phonevalidator/flags/$1.$2"});
 </script>
 ```
-## Local Repository
-<script type="text/javscript" src="phone.validator.min.js"></script>
-
-# How to ...
-## Basic Usage
-1.Get the phone number from a string (even if it's invalid)
-  PhoneValidator.init("<string>").val();
-i.e: 
+#### Local Repository
+##### Download Phone Validator Git Repository
+###### Git command or download directly from github with this [link](https://github.com/niniverloer/phonevalidator.git)
+```
+git clone https://github.com/niniverloer/phonevalidator.git
+```
+##### Integrate
+```
+<script type="text/javscript" src="./path_to_phonevalidator/phone.validator.min.js"></script>
+<script type="text/javscript"> 
+  PhoneValidator.useDefaults({},{flagLink:"./path_to_phonevalidator/flags/$1.$2"});
+</script>
+```
+### How to ...
+#### Basic Usage
+##### Get the phone number from a string (even if it's invalid)
+```
+  PhoneValidator.init("<string>").val()
+```
+i.e:
+```
   PhoneValidator.init("ehfu00agufga23673j--00023848479dfaii").val()
-  >Returns: +23673000238484 which is an invalid phone number
+```
+  Returns: +23673000238484 which is an invalid phone number
+```
   PhoneValidator.init("(+380) 630-293-53-2").val()
-  >Returns: +380630293532 which is a valid phone number
-Note:
-  PhoneValidator recognize 2 international characters 00 and + :
-  - 00 Example 00380630293532 returns +380630293532
-  - + Example +380630293532 returns +380630293532
-2.Validity of a phone number
-  PhoneValidator deals with the phone format of all countries in the world to verify if it's a valid phone number 
-   PhoneValidator.init("dsafngjaiodfjajdaoaa").isValid()
-  >Returns: false
-  PhoneValidator.init("ehfu00agufga23673j--00023848479dfaii").val()
-  >Returns: false
-   PhoneValidator.init("+23673000238484").val()
-  >Returns: false
-  PhoneValidator.init("ehfu00agufga23673j--0002333dfaii").isValid()
-  >Returns: true Because PhoneValidator.init("ehfu00agufga23673j--0002333dfaii").val() Returns +236730002333 which is a valid Central African Republic phone number format
-  PhoneValidator.init(" +1 671-477-8355").isValid()
-  >Returns : true 
-3.Get the phone country code
-  PhoneValidator.init("<string>")["process"].countryCode;
+```
+  Returns: +380630293532 which is a valid phone number
+>Note: PhoneValidator recognize 2 international characters 00 and + 
+
+##### Validity of a phone number
+PhoneValidator deals with the phone format of all countries in the world to verify if it's a valid phone number 
+```
+PhoneValidator.init("dsafngjaiodfjajdaoaa").isValid()
+```
+Returns: false
+```
+PhoneValidator.init("ehfu00agufga23673j--00023848479dfaii").val()
+```
+Returns: false
+```
+PhoneValidator.init("+23673000238484").val()
+```
+Returns: false
+```
+PhoneValidator.init("ehfu00agufga23673j--0002333dfaii").isValid()
+```
+Returns: true `Because` PhoneValidator.init("ehfu00agufga23673j--0002333dfaii").val() `Returns` +236730002333 which is a valid Central African Republic phone number format
+```
+PhoneValidator.init(" +1 671-477-8355").isValid()
+```
+Returns : true 
+#####Get the phone country code
+```
+PhoneValidator.init("<string>")["process"].countryCode
+```
 i.e:
-  PhoneValidator.init(" +1 671-477-8355")["process"].countryCode;
-  >Returns: GU
-4.Get the phone country name
-  PhoneValidator.init("<string>")["process"].countryName;
+```
+  PhoneValidator.init(" +1 671-477-8355")["process"].countryCode
+```
+Returns: GU
+##### Get the phone country name
+```
+PhoneValidator.init("<string>")["process"].countryName
+```
 i.e:
-  PhoneValidator.init(" +1 671-477-8355")["process"].countryName;
-  >Returns: Guam
-5.Get the phone continent of the country
+```
+PhoneValidator.init(" +1 671-477-8355")["process"].countryName
+```
+Returns: Guam
+##### Get the phone continent of the country
+```
+PhoneValidator.init("<string>")["process"].countryContinent
+```
+i.e:
+```
+  PhoneValidator.init(" +1 671-477-8355")["process"].countryContinent
+```
+Returns: OCEANIA
+
+##### Get the phone country flag image link
+```
+  PhoneValidator.init("<string>")["process"].countryFlag
+```
+>Make sure your country's flag directory contains a correct value, See how to Integrate PhoneValidator in your current project in the previous topic
+i.e:
+```
+  PhoneValidator.init(" +1 671-477-8355")["process"].countryFlag
+```
+Returns: https://unpkg.com/phonevalidator@1.0.0/flags/gu.svg
+You can also change the country's flag directory by this way
+```
+  PhoneValidator.init("<string>",{},{flagLink:"<flag_directory>"})["process"].countryFlag
+```
+i.e:
+```
+  PhoneValidator.init(" +1 671-477-8355",{},{flagLink:"./assets/js/phonevalidator/flags/$1.$2"})["process"].countryFlag
+```
+Returns: ./assets/js/phonevalidator/flags/gu.svg <--- this method doesn't change default country's flag directory
+##### Get the international country code in phone number format
+```
   PhoneValidator.init("<string>")["process"].countryContinent;
+```
 i.e:
-  PhoneValidator.init(" +1 671-477-8355")["process"].countryContinent;
-  >Returns: OCEANIA
-6.Get the phone country flag image link
-  PhoneValidator.init("<string>")["process"].countryFlag;
-  >Make sure your country's flag directory contains a correct value, See how to Integrate PhoneValidator in your current project in the previous topic
-i.e:
-  PhoneValidator.init(" +1 671-477-8355")["process"].countryFlag;
-  >Returns: https://unpkg.com/phonevalidator@1.0.0/flags/gu.svg
-  You can also change the country's flag directory by this way
-  PhoneValidator.init("<string>",{},{flagLink:"<flag_directory>"})["process"].countryFlag;
-i.e:
-  PhoneValidator.init(" +1 671-477-8355",{},{flagLink:"./assets/js/phonevalidator/flags/$1.$2"})["process"].countryFlag;
-  >Returns: ./assets/js/phonevalidator/flags/gu.svg <--- this method doesn't change default country's flag directory
-7.Get the international country code in phone number format
-  PhoneValidator.init("<string>")["process"].countryContinent;
-i.e:
+```
   PhoneValidator.init(" +1 671-477-8355")["process"].countryPhoneCode;
-  >Returns: OCEANIA
+```
+Returns: 1671

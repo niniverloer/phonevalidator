@@ -138,10 +138,32 @@ i.e:
 Returns: `./assets/js/phonevalidator/flags/gu.svg` ``this method doesn't change default country's flag directory``
 ##### Get the international country code in phone number format
 ```
-  PhoneValidator.init("<string>")["process"].countryContinent;
+  PhoneValidator.init("<string>")["process"].countryContinent
 ```
 i.e:
 ```
-  PhoneValidator.init(" +1 671-477-8355")["process"].countryPhoneCode;
+  PhoneValidator.init("(+1 671)-477-8355")["process"].countryPhoneCode
 ```
 Returns: `1671`
+##### Get the suscriber number
+```
+  PhoneValidator.init("<string>")["process"].suscriberNumber
+```
+i.e:
+```
+  PhoneValidator.init("+380-63-0293-532")["process"].suscriberNumber
+```
+Returns: `630293532`
+##### Get the valid phone number
+```
+  PhoneValidator.init("<string>")["process"].phoneNumber
+```
+i.e:
+```
+  PhoneValidator.init("+380-63-0293-532")["process"].phoneNumber
+```
+Returns: `+380630293532`
+
+## Author
+**[David Niverloer](https://www.niverloer.me)
+

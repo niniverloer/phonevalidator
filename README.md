@@ -88,7 +88,7 @@ Returns: true Because `PhoneValidator.init("ehfu00agufga23673j--0002333dfaii").v
 PhoneValidator.init(" +1 671-477-8355").isValid()
 ```
 Returns : `true`
-#####Get the phone country code
+##### Get the phone country code
 ```
 PhoneValidator.init("<string>")["process"].countryCode
 ```
@@ -135,7 +135,7 @@ i.e:
 ```
   PhoneValidator.init(" +1 671-477-8355",{},{flagLink:"./assets/js/phonevalidator/flags/$1.$2"})["process"].countryFlag
 ```
-Returns: ./assets/js/phonevalidator/flags/gu.svg <--- this method doesn't change default country's flag directory
+Returns: `./assets/js/phonevalidator/flags/gu.svg` ``this method doesn't change default country's flag directory``
 ##### Get the international country code in phone number format
 ```
   PhoneValidator.init("<string>")["process"].countryContinent;
@@ -144,4 +144,4 @@ i.e:
 ```
   PhoneValidator.init(" +1 671-477-8355")["process"].countryPhoneCode;
 ```
-Returns: 1671
+Returns: `1671`

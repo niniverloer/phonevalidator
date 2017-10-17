@@ -49,9 +49,8 @@ git clone https://github.com/niniverloer/phonevalidator.git
   PhoneValidator.useDefaults({},{flagLink:"./path_to_phonevalidator/flags/$1.$2"});
 </script>
 ```
-### How to ...
-#### Basic Usage
-##### Get the phone number from a string (even if it's invalid)
+### Basic Usage
+#### Get the phone number from a string (even if it's invalid)
 ```
   PhoneValidator.init("<string>").val()
 ```
@@ -66,7 +65,7 @@ i.e:
   Returns: `+380630293532` which is a valid phone number
 >Note: PhoneValidator recognize 2 international characters 00 and + 
 
-##### Validity of a phone number
+#### Validity of a phone number
 PhoneValidator deals with the phone format of all countries in the world to verify if it's a valid phone number 
 ```
 PhoneValidator.init("dsafngjaiodfjajdaoaa").isValid()
@@ -75,20 +74,20 @@ Returns: `false`
 ```
 PhoneValidator.init("ehfu00agufga23673j--00023848479dfaii").val()
 ```
-Returns: `false`
+Returns: `+23673000238484`
 ```
-PhoneValidator.init("+23673000238484").val()
+PhoneValidator.init("+23673000238484").isValid()
 ```
 Returns: `false`
 ```
 PhoneValidator.init("ehfu00agufga23673j--0002333dfaii").isValid()
 ```
-Returns: true Because `PhoneValidator.init("ehfu00agufga23673j--0002333dfaii").val()` Returns +236730002333 which is a valid Central African Republic phone number format
+Returns: `true` Because `PhoneValidator.init("ehfu00agufga23673j--0002333dfaii").val()` Returns `+236730002333` which is a valid Central African Republic phone number format
 ```
 PhoneValidator.init(" +1 671-477-8355").isValid()
 ```
 Returns : `true`
-##### Get the phone country code
+#### Get the phone country code
 ```
 PhoneValidator.init("<string>")["process"].countryCode
 ```
@@ -97,7 +96,7 @@ i.e:
   PhoneValidator.init(" +1 671-477-8355")["process"].countryCode
 ```
 Returns: `GU`
-##### Get the phone country name
+#### Get the phone country name
 ```
 PhoneValidator.init("<string>")["process"].countryName
 ```
@@ -106,7 +105,7 @@ i.e:
 PhoneValidator.init(" +1 671-477-8355")["process"].countryName
 ```
 Returns: `Guam`
-##### Get the phone continent of the country
+#### Get the phone continent of the country
 ```
 PhoneValidator.init("<string>")["process"].countryContinent
 ```
@@ -116,7 +115,7 @@ i.e:
 ```
 Returns: `OCEANIA`
 
-##### Get the phone country flag image link
+#### Get the phone country flag image link
 ```
   PhoneValidator.init("<string>")["process"].countryFlag
 ```
@@ -136,7 +135,7 @@ i.e:
   PhoneValidator.init(" +1 671-477-8355",{},{flagLink:"./assets/js/phonevalidator/flags/$1.$2"})["process"].countryFlag
 ```
 Returns: `./assets/js/phonevalidator/flags/gu.svg` ``this method doesn't change default country's flag directory``
-##### Get the international country code in phone number format
+#### Get the international country code in phone number format
 ```
   PhoneValidator.init("<string>")["process"].countryContinent
 ```
@@ -145,7 +144,7 @@ i.e:
   PhoneValidator.init("(+1 671)-477-8355")["process"].countryPhoneCode
 ```
 Returns: `1671`
-##### Get the suscriber number
+#### Get the suscriber number
 ```
   PhoneValidator.init("<string>")["process"].suscriberNumber
 ```
@@ -154,7 +153,7 @@ i.e:
   PhoneValidator.init("+380-63-0293-532")["process"].suscriberNumber
 ```
 Returns: `630293532`
-##### Get the valid phone number
+#### Get the valid phone number
 ```
   PhoneValidator.init("<string>")["process"].phoneNumber
 ```
@@ -163,7 +162,31 @@ i.e:
   PhoneValidator.init("+380-63-0293-532")["process"].phoneNumber
 ```
 Returns: `+380630293532`
-
+### Working with Phone Validator Events
+Phone Validator Events must be added before the initialization
+#### When the string doesn't contains a valid phone number
+```
+PhoneValidator.addEventListener("invalid_number",function(number){
+  // number can be a invalid phone number, null or an empty string
+  if(number){
+    console.log("Phone Number :"+number+" doesn't match any country phone format")
+  }else{
+    console.log("Please input a valid number")
+  }
+});
+```
+#### Get the fixed number before getting extra information
+```
+PhoneValidator.addEventListener("before_initialized",function(number){
+  console.log("Fixed Number : ",number)
+});
+```
+#### When the phone number validation is finished
+```
+PhoneValidator.addEventListener("all_got",function(process){
+  console.log("Country Name : ",process.countryName)
+});
+```
 ## Author
-**[David Niverloer](https://www.niverloer.me)
+[David Niverloer](https://www.niverloer.me)
 

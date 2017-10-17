@@ -10,25 +10,32 @@ Phone Validator is built under Javascript without any dependency. It can be used
 ### Installing
 #### CDN Integration
 
-Version Spec
+##### Version Spec
+```
 <script type="text/javscript" src="https://unpkg.com/phonevalidator@1.0.0/phone.validator.min.js"></scirpt>
-
-Latest Version
+```
+##### Latest Version
+```
 <script type="text/javscript" src="https://unpkg.com/phonevalidator/phone.validator.min.js"/>
->Warning: When using the cdn link, you must change the default flag directory to use the country flag link
-'''
+```
+Warning: When using the cdn link, you must change the default flag directory to use the country flag link
+```
 <script>
   PhoneValidator.useDefaults({},{flagLink:"https://unpkg.com/phonevalidator@1.0.0/flags/$1.$2"});
 </script>
-'''
+```
 #### NPM Integration
-'''
+##### Command
+```
 npm install --save phonevalidator
-''''
+```
+##### Integrate
+```
 <script type="text/javscript" src="./node_modules/phonevalidator/phone.validator.min.js"></script>
-<script> 
-PhoneValidator.useDefaults({},{flagLink:"./node_modules/phonevalidator/flags/$1.$2"});
+<script type="text/javscript"> 
+  PhoneValidator.useDefaults({},{flagLink:"./node_modules/phonevalidator/flags/$1.$2"});
 </script>
+```
 ## Local Repository
 <script type="text/javscript" src="phone.validator.min.js"></script>
 

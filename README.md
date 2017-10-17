@@ -1,14 +1,14 @@
 # PhoneValidator
 Get international phone number informations
 
-# What's Phone Validator
+## Getting Started
 Phone Validator is a Javascript object that helps you validate a phone number written in an international format even if it contains other characters that are not numeric. It recognizes Country Code, Country Name, Country Continent, and other useful information. It's also a full-featured object and have persistent information.
 
-# Where can I use Phone Validator
+### Built in
 Phone Validator is built under Javascript without any dependency. It can be used wherever it is necessary to do a verification of the telephone number. It can also be used to get information about the current location of the user after checking the phone
 
-# Integrate PhoneValidator
-## CDN Integration
+### Installing
+#### CDN Integration
 
 Version Spec
 <script type="text/javscript" src="https://unpkg.com/phonevalidator@1.0.0/phone.validator.min.js"></scirpt>
@@ -16,20 +16,19 @@ Version Spec
 Latest Version
 <script type="text/javscript" src="https://unpkg.com/phonevalidator/phone.validator.min.js"/>
 >Warning: When using the cdn link, you must change the default flag directory to use the country flag link
+'''
 <script>
-  
   PhoneValidator.useDefaults({},{flagLink:"https://unpkg.com/phonevalidator@1.0.0/flags/$1.$2"});
-
 </script>
-
-## NPM Integration
-
+'''
+#### NPM Integration
+'''
 npm install --save phonevalidator
-
+''''
 <script type="text/javscript" src="./node_modules/phonevalidator/phone.validator.min.js"></script>
->><script> 
->>>PhoneValidator.useDefaults({},{flagLink:"./node_modules/phonevalidator/flags/$1.$2"});
->></script>
+<script> 
+PhoneValidator.useDefaults({},{flagLink:"./node_modules/phonevalidator/flags/$1.$2"});
+</script>
 ## Local Repository
 <script type="text/javscript" src="phone.validator.min.js"></script>
 

@@ -59,11 +59,11 @@ i.e:
 ```
   PhoneValidator.init("ehfu00agufga23673j--00023848479dfaii").val()
 ```
-  Returns: +23673000238484 which is an invalid phone number
+  Returns: `+23673000238484` which is an invalid phone number
 ```
   PhoneValidator.init("(+380) 630-293-53-2").val()
 ```
-  Returns: +380630293532 which is a valid phone number
+  Returns: `+380630293532` which is a valid phone number
 >Note: PhoneValidator recognize 2 international characters 00 and + 
 
 ##### Validity of a phone number
@@ -71,23 +71,23 @@ PhoneValidator deals with the phone format of all countries in the world to veri
 ```
 PhoneValidator.init("dsafngjaiodfjajdaoaa").isValid()
 ```
-Returns: false
+Returns: `false`
 ```
 PhoneValidator.init("ehfu00agufga23673j--00023848479dfaii").val()
 ```
-Returns: false
+Returns: `false`
 ```
 PhoneValidator.init("+23673000238484").val()
 ```
-Returns: false
+Returns: `false`
 ```
 PhoneValidator.init("ehfu00agufga23673j--0002333dfaii").isValid()
 ```
-Returns: true `Because` PhoneValidator.init("ehfu00agufga23673j--0002333dfaii").val() `Returns` +236730002333 which is a valid Central African Republic phone number format
+Returns: true Because `PhoneValidator.init("ehfu00agufga23673j--0002333dfaii").val()` Returns +236730002333 which is a valid Central African Republic phone number format
 ```
 PhoneValidator.init(" +1 671-477-8355").isValid()
 ```
-Returns : true 
+Returns : `true`
 #####Get the phone country code
 ```
 PhoneValidator.init("<string>")["process"].countryCode
@@ -96,7 +96,7 @@ i.e:
 ```
   PhoneValidator.init(" +1 671-477-8355")["process"].countryCode
 ```
-Returns: GU
+Returns: `GU`
 ##### Get the phone country name
 ```
 PhoneValidator.init("<string>")["process"].countryName
@@ -105,7 +105,7 @@ i.e:
 ```
 PhoneValidator.init(" +1 671-477-8355")["process"].countryName
 ```
-Returns: Guam
+Returns: `Guam`
 ##### Get the phone continent of the country
 ```
 PhoneValidator.init("<string>")["process"].countryContinent
@@ -114,18 +114,19 @@ i.e:
 ```
   PhoneValidator.init(" +1 671-477-8355")["process"].countryContinent
 ```
-Returns: OCEANIA
+Returns: `OCEANIA`
 
 ##### Get the phone country flag image link
 ```
   PhoneValidator.init("<string>")["process"].countryFlag
 ```
 >Make sure your country's flag directory contains a correct value, See how to Integrate PhoneValidator in your current project in the previous topic
+
 i.e:
 ```
   PhoneValidator.init(" +1 671-477-8355")["process"].countryFlag
 ```
-Returns: https://unpkg.com/phonevalidator@1.0.0/flags/gu.svg
+Returns: `https://unpkg.com/phonevalidator@1.0.0/flags/gu.svg`
 You can also change the country's flag directory by this way
 ```
   PhoneValidator.init("<string>",{},{flagLink:"<flag_directory>"})["process"].countryFlag

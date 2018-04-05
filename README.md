@@ -12,7 +12,7 @@ Phone Validator is built under Javascript without any dependency. It can be used
 
 ##### Version Spec
 ```
-<script type="text/javscript" src="https://unpkg.com/phonevalidator@1.1.2/phone.validator.js"></scirpt>
+<script type="text/javscript" src="https://unpkg.com/phonevalidator@1.1.4/phone.validator.js"></scirpt>
 ```
 ##### Latest Version
 ```
@@ -21,7 +21,7 @@ Phone Validator is built under Javascript without any dependency. It can be used
 Warning: When using the cdn link, you must change the default flag directory to use the country flag link
 ```
 <script>
-  PhoneValidator.useDefaults({},{flagLink:"https://unpkg.com/phonevalidator@1.1.2/flags/$1.$2"});
+  PhoneValidator.useDefaults({},{flagLink:"https://unpkg.com/phonevalidator@1.1.4/flags/$1.$2"});
 </script>
 ```
 #### NPM Integration

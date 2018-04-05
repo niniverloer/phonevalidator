@@ -16,7 +16,7 @@ Phone Validator is built under Javascript without any dependency. It can be used
 ```
 ##### Latest Version
 ```
-<script type="text/javscript" src="https://unpkg.com/phonevalidator/phone.validator.min.js"/>
+<script type="text/javscript" src="https://unpkg.com/phonevalidator/phone.validator.min.js"></script>
 ```
 Warning: When using the cdn link, you must change the default flag directory to use the country flag link
 ```

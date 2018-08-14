@@ -2,7 +2,7 @@
 Get international phone number informations
 
 ## Getting Started
-Phone Validator is a Javascript object that helps you validate a phone number written in an international format even if it contains other characters that are not numeric. It recognizes Country Code, Country Name, Country Continent, and other useful information. It's also a full-featured object and have persistent information.
+Phone Validator is a Javascript object that helps you to parse and validate a phone number written in an international format even if it contains other characters that are not numeric. It recognizes Country Code, Country Name, Country Continent, and other useful information. It's also a full-featured object and have persistent information.
 
 ### Built in
 Phone Validator is built under Javascript without any dependency. It can be used wherever it is necessary to do a verification of the telephone number. It can also be used to get information about the current location of the user after checking the phone
@@ -102,7 +102,7 @@ PhoneValidator.init("<string>")["process"].countryName
 ```
 i.e:
 ```
-PhoneValidator.init(" +1 671-477-8355")["process"].countryName
+PhoneValidator.init(" +1 (671)-477-8355")["process"].countryName
 ```
 Returns: `Guam`
 #### Get the phone continent of the country
